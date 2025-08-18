@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card, CardContent, CardHeader } from '../components/ui/Card';
 
-export const Contact: React.FC = () => {
+export const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,9 +12,8 @@ export const Contact: React.FC = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -22,7 +21,7 @@ export const Contact: React.FC = () => {
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value

@@ -4,7 +4,7 @@ import { Menu, X, Moon, Sun, Zap } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { Button } from '../ui/Button';
 
-export const Header: React.FC = () => {
+export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const location = useLocation();
@@ -13,13 +13,12 @@ export const Header: React.FC = () => {
     { name: 'Home', href: '/' },
     { name: 'Product', href: '/product' },
     { name: 'Use Cases', href: '/use-cases' },
-    { name: 'Dashboard', href: '/dashboard' },
     { name: 'About', href: '/about' },
     { name: 'Testimonials', href: '/testimonials' },
     { name: 'Contact', href: '/contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path) => location.pathname === path;
 
   return (
     <header className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">

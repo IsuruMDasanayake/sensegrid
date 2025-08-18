@@ -3,7 +3,7 @@ import { ArrowRight, Factory, Heart, Banknote, Truck, GraduationCap, Building } 
 import { Button } from '../components/ui/Button';
 import { Card, CardContent, CardHeader } from '../components/ui/Card';
 
-export const UseCases: React.FC = () => {
+export const UseCases = () => {
   const industries = [
     {
       icon: Factory,

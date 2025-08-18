@@ -3,7 +3,7 @@ import { Download, Play, CheckCircle, Zap, Shield, Globe } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card, CardContent, CardHeader } from '../components/ui/Card';
 
-export const Product: React.FC = () => {
+export const Product = () => {
   const [activeTab, setActiveTab] = useState('specifications');
 
   const tabs = [
@@ -38,36 +38,34 @@ export const Product: React.FC = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                The Complete Business Intelligence Platform
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Harness the power of artificial intelligence to automate workflows, 
-                analyze data, and accelerate your business growth with our comprehensive platform.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="group">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
-                </Button>
-                <Button variant="outline" size="lg">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Brochure
-                </Button>
-              </div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              The Complete Business Intelligence Platform
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              Harness the power of artificial intelligence to automate workflows, 
+              analyze data, and accelerate your business growth with our comprehensive platform.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="group">
+                <Play className="mr-2 h-5 w-5" />
+                Watch Demo
+              </Button>
+              <Button variant="outline" size="lg">
+                <Download className="mr-2 h-5 w-5" />
+                Download Brochure
+              </Button>
             </div>
-            <div className="relative">
-              <div className="aspect-video bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-2xl overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-                  alt="SenseGrid Dashboard"
-                  className="w-full h-full object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
+          </div>
+          <div className="relative">
+            <div className="aspect-video bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-2xl overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                alt="SenseGrid Dashboard"
+                className="w-full h-full object-cover opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
           </div>
         </div>
@@ -142,9 +140,7 @@ export const Product: React.FC = () => {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        {benefit.description}
-                      </p>
+                      <p className="text-gray-600 dark:text-gray-300">{benefit.description}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -161,12 +157,8 @@ export const Product: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex-1 text-center md:text-left">
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                        {step.title}
-                      </h3>
-                      <p className="text-lg text-gray-600 dark:text-gray-300">
-                        {step.description}
-                      </p>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{step.title}</h3>
+                      <p className="text-lg text-gray-600 dark:text-gray-300">{step.description}</p>
                     </div>
                     {index < steps.length - 1 && (
                       <div className="hidden md:block w-24 h-px bg-gray-300 dark:bg-gray-600" />

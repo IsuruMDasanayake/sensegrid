@@ -1,8 +1,7 @@
 import React from 'react';
-import { Award, Users, Globe, Target } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '../components/ui/Card';
 
-export const About: React.FC = () => {
+export const About = () => {
   const teamMembers = [
     {
       name: 'Sarah Johnson',
@@ -75,28 +74,26 @@ export const About: React.FC = () => {
 
       {/* CEO Message */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
-                alt="Sarah Johnson, CEO"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                A Message from Our CEO
-              </h2>
-              <blockquote className="text-lg text-gray-600 dark:text-gray-300 mb-6 italic">
-                "At SenseGrid, we believe that every business deserves access to cutting-edge technology. 
-                Our platform breaks down barriers and empowers organizations to innovate, grow, and thrive 
-                in an increasingly digital world."
-              </blockquote>
-              <div className="space-y-2">
-                <div className="font-semibold text-gray-900 dark:text-white">Sarah Johnson</div>
-                <div className="text-gray-600 dark:text-gray-400">Chief Executive Officer & Founder</div>
-              </div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+              alt="Sarah Johnson, CEO"
+              className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
+            />
+          </div>
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              A Message from Our CEO
+            </h2>
+            <blockquote className="text-lg text-gray-600 dark:text-gray-300 mb-6 italic">
+              "At SenseGrid, we believe that every business deserves access to cutting-edge technology. 
+              Our platform breaks down barriers and empowers organizations to innovate, grow, and thrive 
+              in an increasingly digital world."
+            </blockquote>
+            <div className="space-y-2">
+              <div className="font-semibold text-gray-900 dark:text-white">Sarah Johnson</div>
+              <div className="text-gray-600 dark:text-gray-400">Chief Executive Officer & Founder</div>
             </div>
           </div>
         </div>
@@ -117,7 +114,6 @@ export const About: React.FC = () => {
 
           <div className="relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-300 dark:bg-gray-600" />
-            
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
@@ -134,13 +130,10 @@ export const About: React.FC = () => {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-600 dark:text-gray-300">
-                          {milestone.description}
-                        </p>
+                        <p className="text-gray-600 dark:text-gray-300">{milestone.description}</p>
                       </CardContent>
                     </Card>
                   </div>
-                  
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-gray-900" />
                 </div>
               ))}
@@ -151,36 +144,24 @@ export const About: React.FC = () => {
 
       {/* Team Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Meet Our Leadership Team
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Passionate innovators driving the future of technology with decades of combined experience.
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Meet Our Leadership Team
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+            Passionate innovators driving the future of technology with decades of combined experience.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <Card key={index} hover className="text-center">
                 <CardContent className="p-6">
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 dark:text-blue-400 text-sm font-medium mb-3">
-                    {member.role}
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {member.bio}
-                  </p>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">{member.name}</h3>
+                  <p className="text-blue-600 dark:text-blue-400 text-sm font-medium mb-3">{member.role}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{member.bio}</p>
                 </CardContent>
               </Card>
             ))}
